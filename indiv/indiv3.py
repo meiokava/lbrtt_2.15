@@ -3,17 +3,22 @@
 
 import os
 
+if __name__ == "__main__":
 
-if __name__ == '__main__':
-    curr_path = os.getcwd()
-    n_of_d = input("Enter the name of the new directory: ")
-    os.mkdir(n_of_d)
+    # creation of the new directory that the user chooses
+    directory = input('Enter the name of your new directory: ')
+    parent_dir = "C:\\OPI"
+    path = os.path.join(parent_dir, directory)
+    os.makedirs(path)
+    print('Directory "% s" was created' % directory)
+    dir_list = os.listdir(parent_dir)
 
-    os.chdir(curr_path + '\\' + n_of_d)
-    with open("file.txt", "w", encoding="utf-8") as f:
-        f.write(os.getcwd())
+    # displaying files and directories in the OPI directory
+    print(f'\nFiles and directories in OPI directory: {dir_list}')
 
-    n_name = input("Enter your name of the file: ")
-    os.rename("file.txt", n_name)
-    os.remove(n_name)
-
+    # creation and filling of the file
+    os.chdir(path)
+    fd = input("\nCreate your file, enter it's name: ")
+    with open(fd, "w+", encoding="utf-8") as f:
+        wr_in_file = input('Write something in your file: ')
+        f.write(wr_in_file)
