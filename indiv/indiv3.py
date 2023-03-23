@@ -10,7 +10,7 @@ if __name__ == "__main__":
     parent_dir = "C:\\OPI"
     path = os.path.join(parent_dir, directory)
     os.makedirs(path)
-    print('Directory "% s" was created' % directory)
+    print(f'Directory {directory} was created')
     dir_list = os.listdir(parent_dir)
 
     # displaying files and directories in the OPI directory
