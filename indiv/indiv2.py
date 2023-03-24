@@ -12,3 +12,4 @@ if __name__ == "__main__":
             q = str(s_ind) + "; " + i
             s_ind += 1
             tw.write(q+"\n")
+        tw.close()
