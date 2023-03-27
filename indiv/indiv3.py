@@ -19,6 +19,7 @@ if __name__ == "__main__":
     # creation and filling of the file
     os.chdir(path)
     fd = input("\nCreate your file, enter it's name: ")
+    wr_in_file = input('Write something in your file: ')
     with open(fd, "w+", encoding="utf-8") as f:
-        wr_in_file = input('Write something in your file: ')
         f.write(wr_in_file)
+
